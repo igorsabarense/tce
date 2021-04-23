@@ -1,0 +1,33 @@
+{
+  "assunto": "processo1",
+
+  "municipio": {
+    "id": 1
+  },
+  "partes": [
+    {
+        "pessoaFisica": {
+            "nome": "Igor",
+            "cpf": "13080348656"
+        },
+        "pessoaJuridica": null
+
+
+    }
+  ],
+  "pecasProcessuais": [
+   { "descricao": "x",
+    "anexo": null}
+  ],
+  "peticionamentos": [
+    {"peticaoInicial" :" peticao "}
+  ],
+  "tramitacao": [
+    {
+      "creationDateTime": "2021-04-22T22:39:22.451Z",
+      "destino": "OFFICE B",
+      "ocorrencia": "ARQUIVO",
+      "origem": "OFFICE A"
+    }
+  ]
+}

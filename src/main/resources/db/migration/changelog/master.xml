@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <include  file="db/migration/changelog/20210409_add_entity_User.xml" relativeToChangelogFile="false"/>
+    <include file="db/migration/changelog/20210409_add_entity_Roles.xml" relativeToChangelogFile="false"/>
+    <include file="db/migration/changelog/20210409_add_entity_UserRoles.xml" relativeToChangelogFile="false"/>
+    <include file="db/migration/changelog/20210409_Initial_Inserts.xml" relativeToChangelogFile="false"/>
+    <include file="db/migration/changelog/20210412_add_entity_Municipio.xml" relativeToChangelogFile="false"/>
+    <include file="db/migration/changelog/20210411_add_entity_Processo.xml" relativeToChangelogFile="false"/>
+    <include file="db/migration/changelog/20210411_add_entity_PessoaFisica.xml" relativeToChangelogFile="false"/>
+    <include file="db/migration/changelog/20210411_add_entity_PessoaJuridica.xml" relativeToChangelogFile="false"/>
+    <include file="db/migration/changelog/20210412_add_entity_Anexo.xml" relativeToChangelogFile="false"/>
+    <include file="db/migration/changelog/20210411_add_entity_Advogado.xml" relativeToChangelogFile="false"/>
+    <include file="db/migration/changelog/20210413_add_entity_PecasProcessuais.xml" relativeToChangelogFile="false"/>
+    <include file="db/migration/changelog/20210421_add_entity_Parte.xml" relativeToChangelogFile="false"/>
+    <include file="db/migration/changelog/20210413_add_entity_Peticionamento.xml" relativeToChangelogFile="false"/>
+    <include file="db/migration/changelog/20210412_add_entity_Tramitacao.xml" relativeToChangelogFile="false"/>
+
+</databaseChangeLog>

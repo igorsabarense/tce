@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+
+    <changeSet id="createTableParte" author="igor.sabarense">
+        <createTable tableName="parte">
+            <column name="id" type="bigint(20)" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false" />
+            </column>
+            <column name="active" type="TINYINT" defaultValue="1"></column>
+            <column name="creation_date_time" type="TIMESTAMP" defaultValueComputed="CURRENT_TIMESTAMP"></column>
+
+            <column name="pessoa_fisica_id" type="bigint(20)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="pessoa_juridica_id" type="bigint(20)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="processo_id" type="bigint(20)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+        <addForeignKeyConstraint baseTableName="parte" baseColumnNames="pessoa_fisica_id" constraintName="fk_parte_pf" referencedTableName="pessoa_fisica"
+                                 referencedColumnNames="id"/>
+        <addForeignKeyConstraint baseTableName="parte" baseColumnNames="pessoa_juridica_id" constraintName="fk_parte_pj" referencedTableName="pessoa_juridica"
+                                 referencedColumnNames="id"/>
+        <addForeignKeyConstraint baseTableName="parte" baseColumnNames="processo_id" constraintName="fk_parte_processo" referencedTableName="processo"
+                                 referencedColumnNames="id"/>
+    </changeSet>
+
+</databaseChangeLog>

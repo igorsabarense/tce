@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+
+    <changeSet id="createTablePecasProcessuais" author="igor.sabarense">
+        <createTable tableName="pecas_processuais">
+            <column name="id" type="bigint(20)" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false" />
+            </column>
+
+            <column name="data_arquivo" type="TIMESTAMP" defaultValueComputed="CURRENT_TIMESTAMP"></column>
+
+            <column name="processo_id" type="bigint(20)">
+                <constraints nullable="false"/>
+            </column>
+
+
+            <column name="anexo_id" type="bigint(20)">
+            </column>
+
+
+            <column name="descricao" type="varchar(200)">
+                <constraints nullable="false"/>
+            </column>
+
+
+        </createTable>
+        <addForeignKeyConstraint baseTableName="pecas_processuais" baseColumnNames="processo_id"
+                                 constraintName="fk_processo_pecas"
+                                 referencedTableName="processo"
+                                 referencedColumnNames="id"/>
+        <addForeignKeyConstraint baseTableName="pecas_processuais" baseColumnNames="anexo_id"
+                                 constraintName="fk_anexo_pecas"
+                                 referencedTableName="processo"
+                                 referencedColumnNames="id"/>
+    </changeSet>
+
+</databaseChangeLog>

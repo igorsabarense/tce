@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+
+    <changeSet id="createTableProcesso" author="igor.sabarense">
+        <createTable tableName="processo">
+            <column name="id" type="bigint(20)" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false" />
+            </column>
+
+            <column name="creation_date_time" type="TIMESTAMP" defaultValueComputed="CURRENT_TIMESTAMP"></column>
+
+            <column name="municipio_id" type="bigint(20)">
+                <constraints nullable="false"/>
+            </column>
+
+
+            <column name="assunto" type="VARCHAR(200)">
+                <constraints nullable="false"/>
+            </column>
+
+
+        </createTable>
+        <addForeignKeyConstraint baseTableName="processo" baseColumnNames="municipio_id"
+                                 constraintName="fk-municipio-processo"
+                                 referencedTableName="municipio"
+                                 referencedColumnNames="id"/>
+    </changeSet>
+
+</databaseChangeLog>
